@@ -1,0 +1,76 @@
+/* Main container */
+.about-container {
+  width: 100%;
+  min-height: 80vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Title */
+.about-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Text */
+.about-text {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Features section */
+.about-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Feature card */
+.feature-box {
+  background: #f8f9fa;
+  width: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* Hover */
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Feature titles */
+.feature-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Feature text */
+.feature-box p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+
+  .feature-box {
+    width: 90%;
+  }
+}

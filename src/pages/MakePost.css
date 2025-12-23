@@ -1,0 +1,288 @@
+/* Full page container with dark gradient background */
+.makepost-container {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background effects */
+.makepost-container::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(138, 99, 210, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -200px;
+  right: -100px;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.makepost-container::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(107, 70, 193, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -150px;
+  left: -100px;
+  animation: pulse 8s ease-in-out infinite 4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Form box with glassmorphism */
+.makepost-box {
+  width: 550px;
+  max-width: 100%;
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 40px 35px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(138, 99, 210, 0.3);
+  border: 1px solid rgba(138, 99, 210, 0.3);
+  position: relative;
+  z-index: 10;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title styling */
+.makepost-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8a63d2 0%, #b794f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(138, 99, 210, 0.3);
+}
+
+/* Input group container */
+.input-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.input-group label {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Input, textarea, and select styling */
+.input-group input,
+.input-group textarea,
+.input-group select {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 99, 210, 0.3);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #6b6b7b;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  border-color: #8a63d2;
+  outline: none;
+  background: rgba(138, 99, 210, 0.1);
+  box-shadow: 0 0 0 3px rgba(138, 99, 210, 0.15);
+}
+
+/* Textarea specific styling */
+textarea {
+  height: 120px;
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: rgba(138, 99, 210, 0.1);
+  border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(138, 99, 210, 0.4);
+  border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 99, 210, 0.6);
+}
+
+/* Select dropdown styling */
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238a63d2' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 45px;
+}
+
+.input-group select option {
+  background: #1a1a2e;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* File input styling */
+.input-group input[type="file"] {
+  padding: 12px;
+  cursor: pointer;
+  background: rgba(138, 99, 210, 0.08);
+  border: 2px dashed rgba(138, 99, 210, 0.4);
+}
+
+.input-group input[type="file"]:hover {
+  border-color: #8a63d2;
+  background: rgba(138, 99, 210, 0.15);
+}
+
+.input-group input[type="file"]::file-selector-button {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #8a63d2 0%, #6b46c1 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.input-group input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(135deg, #9d76e7 0%, #7c5ad1 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(138, 99, 210, 0.4);
+}
+
+/* Submit button */
+.post-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #8a63d2 0%, #6b46c1 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(138, 99, 210, 0.4);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.post-btn:hover {
+  background: linear-gradient(135deg, #9d76e7 0%, #7c5ad1 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(138, 99, 210, 0.6);
+}
+
+.post-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .makepost-box {
+    padding: 30px 25px;
+  }
+
+  .makepost-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group input,
+  .input-group textarea,
+  .input-group select {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  .post-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .makepost-container {
+    padding: 30px 15px;
+  }
+
+  .makepost-box {
+    padding: 25px 20px;
+  }
+
+  .makepost-title {
+    font-size: 24px;
+  }
+}
