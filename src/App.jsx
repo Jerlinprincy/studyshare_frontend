@@ -7,10 +7,12 @@ import About from "./pages/About";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import MakePost from "./pages/MakePost";
+import MyPosts from "./pages/MyPosts.jsx";
+
 import AllPosts from "./pages/AllPosts";
 
 // ✅ Import MyPosts page
-import MyPosts from "./pages/MyPosts";
+// import MyPosts from "./pages/MyPosts";
 import Profile from "./pages/Profile";
 const App = () => {
   return (
